@@ -60,6 +60,13 @@ compress: $(PREFIX)/bin/$(PKG_NAME)_$(GOOS)-$(GOARCH)-slim$(call extension,$(GOO
 		--iidfile $@ \
 		.
 
+# docker-multi: Dockerfile
+# 	@docker buildx build \
+# 		--platform linux/amd64,linux/arm64,linux/arm,windows/amd64 \
+# 		-t hairyhenderson/gomplate:multi-slim \
+# 		--target gomplate-slim \
+# 		--push .
+
 %.cid: %.iid
 	@docker create $(shell cat $<) > $@
 
