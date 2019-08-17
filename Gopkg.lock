@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:5d72bbcc9c8667b11c3dc3cbe681c5a6f71e5096744c0bf7726ab5c6425d5dc4"
+  name = "github.com/BurntSushi/toml"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005"
+  version = "v0.3.1"
+
+[[projects]]
   digest = "1:25870183293a3fb61cc9afd060a61d63a486f091db72af01a8ea3449f5ca530d"
   name = "github.com/Masterminds/goutils"
   packages = ["."]
@@ -30,7 +38,7 @@
   revision = "ec5e00d3c878b2a97bbe0884ef45ffd1b4f669f5"
 
 [[projects]]
-  digest = "1:bcf6c6c7286d7dec7597bf6fa2623a5040a1d49a5b2d804f9051c593f183ea8d"
+  digest = "1:2cee36dff72e316f2a3e37a7aedc775630c646e236015536e9370c89c7244925"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -52,20 +60,27 @@
     "aws/session",
     "aws/signer/v4",
     "internal/ini",
+    "internal/s3err",
     "internal/sdkio",
     "internal/sdkrand",
     "internal/sdkuri",
     "internal/shareddefaults",
     "private/protocol",
     "private/protocol/ec2query",
+    "private/protocol/eventstream",
+    "private/protocol/eventstream/eventstreamapi",
     "private/protocol/json/jsonutil",
     "private/protocol/jsonrpc",
     "private/protocol/query",
     "private/protocol/query/queryutil",
     "private/protocol/rest",
+    "private/protocol/restxml",
     "private/protocol/xml/xmlutil",
     "service/ec2",
     "service/kms",
+    "service/s3",
+    "service/s3/s3iface",
+    "service/s3/s3manager",
     "service/secretsmanager",
     "service/ssm",
     "service/sts",
@@ -120,6 +135,26 @@
   revision = "d7302db945fa6ea264fb79d8e13e931ea514a602"
 
 [[projects]]
+  digest = "1:c0299ae1fc994cf7a9565c0ec274060374a392fad1f2f5bb23b874dfd74636ae"
+  name = "github.com/golang/protobuf"
+  packages = [
+    "proto",
+    "protoc-gen-go",
+    "protoc-gen-go/descriptor",
+    "protoc-gen-go/generator",
+    "protoc-gen-go/generator/internal/remap",
+    "protoc-gen-go/grpc",
+    "protoc-gen-go/plugin",
+    "ptypes",
+    "ptypes/any",
+    "ptypes/duration",
+    "ptypes/timestamp",
+  ]
+  pruneopts = "NUT"
+  revision = "b5d812f8a3706043e23a9cd5babf2e5423744d30"
+  version = "v1.3.1"
+
+[[projects]]
   digest = "1:7f114b78210bf5b75f307fc97cff293633c835bab1e0ea8a744a44b39c042dfe"
   name = "github.com/golang/snappy"
   packages = ["."]
@@ -147,6 +182,25 @@
   pruneopts = "NUT"
   revision = "0cd6bf5da1e1c83f8b45653022c74f71af0538a4"
   version = "v1.1.1"
+
+[[projects]]
+  digest = "1:4626dac5aa045daaa10d6b2ab215bf063fc2820b2b970dffd38d0063b7f9ec16"
+  name = "github.com/google/wire"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "a7a9b0ede2c6019fbb86a3bcdafa1661d127d7e9"
+  version = "v0.2.2"
+
+[[projects]]
+  digest = "1:13b5bcd4fe1e65f7a4974bb0e466b6dfda6fd0fe28f9cd699e004d5e01dbd5ee"
+  name = "github.com/googleapis/gax-go"
+  packages = [
+    ".",
+    "v2",
+  ]
+  pruneopts = "NUT"
+  revision = "bd5b16380fd03dc758d11cef74ba2e3bc8b0e8c2"
+  version = "v2.0.5"
 
 [[projects]]
   digest = "1:974a3957354622ffb7b0b345374322f782800a8e4c4517022fce77ef796249c5"
@@ -448,6 +502,49 @@
   version = "v0.3.3"
 
 [[projects]]
+  digest = "1:9123343e029c10a94175f8c549b36160e9a55fea4027219a81ac339804a90295"
+  name = "go.opencensus.io"
+  packages = [
+    ".",
+    "internal",
+    "internal/tagencoding",
+    "metric/metricdata",
+    "metric/metricproducer",
+    "plugin/ocgrpc",
+    "resource",
+    "stats",
+    "stats/internal",
+    "stats/view",
+    "tag",
+    "trace",
+    "trace/internal",
+    "trace/propagation",
+    "trace/tracestate",
+  ]
+  pruneopts = "NUT"
+  revision = "9c377598961b706d1542bd2d84d538b5094d596e"
+  version = "v0.22.0"
+
+[[projects]]
+  digest = "1:7443ef8b1e81821a0d4e7ea853de42253ed6588abc5474e54087d166c93e11e4"
+  name = "gocloud.dev"
+  packages = [
+    "aws",
+    "blob",
+    "blob/driver",
+    "blob/s3blob",
+    "gcerrors",
+    "internal/escape",
+    "internal/gcerr",
+    "internal/oc",
+    "internal/openurl",
+    "internal/retry",
+  ]
+  pruneopts = "NUT"
+  revision = "bea4ab09779c3fe478677bab7f3c216c5bc22444"
+  version = "v0.15.0"
+
+[[projects]]
   branch = "master"
   digest = "1:b7b11b85d17cbca82b8d29cb43ba84031d330b93697f017b360ff2d5c578ef95"
   name = "golang.org/x/crypto"
@@ -467,13 +564,37 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:bde464198a097e3bd7e1b45993bb6b5339bbe50ad23613a7def0379ed9f7a6df"
+  digest = "1:508d2c936400f896e50e6e36750d548ce32916bd52cf2434d6bff200c07b03c0"
+  name = "golang.org/x/exp"
+  packages = [
+    "apidiff",
+    "cmd/apidiff",
+  ]
+  pruneopts = "NUT"
+  revision = "efd6b22b2522a48712e1fd0b3c1ab34d243f5245"
+
+[[projects]]
+  branch = "master"
+  digest = "1:03004f72cd37290aa0cba90b66d418f3a7cfb47220207398b561e6abe7aa8f74"
+  name = "golang.org/x/lint"
+  packages = [
+    ".",
+    "golint",
+  ]
+  pruneopts = "NUT"
+  revision = "959b441ac422379a43da2230f62be024250818b0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:bc313ad293b0016339b20946f92c5f4b5a64e17a7a4d6ddfeade333e32520e12"
   name = "golang.org/x/net"
   packages = [
     "http/httpguts",
     "http2",
     "http2/hpack",
     "idna",
+    "internal/timeseries",
+    "trace",
   ]
   pruneopts = "NUT"
   revision = "f3200d17e092c607f615320ecaad13d87ad9a2b3"
@@ -523,6 +644,90 @@
   revision = "9d24e82272b4f38b78bc8cff74fa936d31ccd8ef"
 
 [[projects]]
+  branch = "master"
+  digest = "1:64163ccf727f18aa3207437e4ec3e831345a0a3875bf1057bb63b4d5012c0e16"
+  name = "golang.org/x/tools"
+  packages = [
+    "cmd/goimports",
+    "go/ast/astutil",
+    "go/buildutil",
+    "go/gcexportdata",
+    "go/internal/cgo",
+    "go/internal/gcimporter",
+    "go/internal/packagesdriver",
+    "go/loader",
+    "go/packages",
+    "go/types/typeutil",
+    "internal/fastwalk",
+    "internal/gopathwalk",
+    "internal/imports",
+    "internal/module",
+    "internal/semver",
+  ]
+  pruneopts = "NUT"
+  revision = "5aca471b1d59ca42d39ca6419e64061391b9a6ad"
+
+[[projects]]
+  branch = "master"
+  digest = "1:16abb29c003995f7c4fdec9c19cca4f9867e271d3c6b93ed85f9cce257f7bce7"
+  name = "golang.org/x/xerrors"
+  packages = [
+    ".",
+    "internal",
+  ]
+  pruneopts = "NUT"
+  revision = "3ee3066db522c6628d440a3a91c4abdd7f5ef22f"
+
+[[projects]]
+  branch = "master"
+  digest = "1:583a0c80f5e3a9343d33aea4aead1e1afcc0043db66fdf961ddd1fe8cd3a4faf"
+  name = "google.golang.org/genproto"
+  packages = ["googleapis/rpc/status"]
+  pruneopts = "NUT"
+  revision = "a7e196e89fd3a3c4d103ca540bd5dac3a736e375"
+
+[[projects]]
+  digest = "1:1ec4bc6f7cbf98268fafafea40cdeb5ff5d4914cc9b9ef615fbbfc1ac43c0622"
+  name = "google.golang.org/grpc"
+  packages = [
+    ".",
+    "balancer",
+    "balancer/base",
+    "balancer/roundrobin",
+    "binarylog/grpc_binarylog_v1",
+    "codes",
+    "connectivity",
+    "credentials",
+    "credentials/internal",
+    "encoding",
+    "encoding/proto",
+    "grpclog",
+    "internal",
+    "internal/backoff",
+    "internal/balancerload",
+    "internal/binarylog",
+    "internal/channelz",
+    "internal/envconfig",
+    "internal/grpcrand",
+    "internal/grpcsync",
+    "internal/syscall",
+    "internal/transport",
+    "keepalive",
+    "metadata",
+    "naming",
+    "peer",
+    "resolver",
+    "resolver/dns",
+    "resolver/passthrough",
+    "stats",
+    "status",
+    "tap",
+  ]
+  pruneopts = "NUT"
+  revision = "501c41df7f472c740d0674ff27122f3f48c80ce7"
+  version = "v1.21.1"
+
+[[projects]]
   branch = "v1"
   digest = "1:1ac47b19a2ad8287a4c6e91630355d63646c480c32f2bbee757a850dabe90bc8"
   name = "gopkg.in/check.v1"
@@ -537,6 +742,36 @@
   packages = ["."]
   pruneopts = "NUT"
   revision = "252a03df762e6cc75ed23ccd28fed3c3bd19516f"
+
+[[projects]]
+  digest = "1:03c1e714103195b53676de4be2e2baed12ab865b46790adff4d8126e7ea57e14"
+  name = "honnef.co/go/tools"
+  packages = [
+    "arg",
+    "callgraph",
+    "callgraph/static",
+    "cmd/staticcheck",
+    "config",
+    "deprecated",
+    "functions",
+    "internal/sharedcheck",
+    "lint",
+    "lint/lintdsl",
+    "lint/lintutil",
+    "lint/lintutil/format",
+    "simple",
+    "ssa",
+    "ssa/ssautil",
+    "ssautil",
+    "staticcheck",
+    "staticcheck/vrp",
+    "stylecheck",
+    "unused",
+    "version",
+  ]
+  pruneopts = "NUT"
+  revision = "95959eaf5e3c41c66151dcfd91779616b84077a8"
+  version = "2019.1.1"
 
 [[projects]]
   digest = "1:c3c645369d12dc28c9119d974127bc0fa849b5608e06bab83d0c9a2254289574"
@@ -588,6 +823,8 @@
     "github.com/stretchr/testify/assert",
     "github.com/ugorji/go/codec",
     "github.com/zealic/xignore",
+    "gocloud.dev/blob",
+    "gocloud.dev/blob/s3blob",
     "golang.org/x/crypto/bcrypt",
     "golang.org/x/crypto/pbkdf2",
     "gopkg.in/check.v1",
